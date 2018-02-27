@@ -1,0 +1,36 @@
+#!/usr/bin/python3
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set the total time and time step
+
+TimeSteps = 1000000
+
+# Make a mesh for positions in x
+
+xMesh = 10001
+
+#Delta should be odd to have a middle position
+
+# Generate the space for one time step
+
+eta = np.zeros((xMesh), dtype=float)
+
+# Put in initial conditions
+
+amplitude = 100.0
+width = 50
+middle = xMesh/2
+
+for iteration in range(0, width+1):
+	indexR = middle + iteration
+	indexL = middle - iteration
+	y = -iteration*2 + amplitude
+	
+	np.put(eta, indexR, y)
+	np.put(eta, indexL, y)
+
+plt.plot(eta)
+plt.axis('equal')
+plt.show()
