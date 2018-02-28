@@ -1,7 +1,15 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
+import argparse
 import numpy as np
 import matplotlib.pyplot as plt
+
+# Set up argument parsing
+
+parser = argparse.ArgumentParser(description=
+'Generate 1 dimensional transverse waves')
+parser.add_argument('-o', '--output', help = 'Output file name and path.')
+args = parser.parse_args()
 
 # Set the total time and time step
 
