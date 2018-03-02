@@ -16,11 +16,11 @@ lambda x: (4/(np.sqrt(2*np.pi)))*(np.exp(-((x-8)**2/15)))+0.35])
 
 # The tension vector in the positive direction.
 
-tp = 
+tp = ([],[],[],[])
 
 # The tension vector in the negative direction.
 
-tn = 
+tn = ([],[],[],[])
 
 # set up the plotting space
 
