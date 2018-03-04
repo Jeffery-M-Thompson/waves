@@ -17,7 +17,7 @@ XP = 0.0
 YP = 0.0
 UP = 1.0
 VP = 1.0
-ax.arrow(XP, YP, UP, VP, fc="k", ec="k", head_width=0.05, head_length= 0.1 )
+ax.arrow(XP, YP, UP, VP, fc="k", ec="k", head_width=0.05, head_length= 0.05 )
 
 # plot eta
 
@@ -31,7 +31,14 @@ x1 = [0.0, 1.0]
 y1 = [0.0, 0.0]
 ax.plot(x1, y1, 'k--')
 
+# plot the angle arch
+alpha1 = pts.Arc([0.0, 0.0], 0.25, 0.25, angle=0, theta1=0, theta2=45)
+ax.add_patch(alpha1)
 
+# plot the labels
+plt.text(0.12, 0.05, r'$\alpha_i$', fontsize=16)
+plt.text(1.025, 0.45, r'$\partial \eta$', fontsize=16)
+plt.text(0.5, -0.1, r'$\partial x$', fontsize=16)
 # The code for removing the axis and replacing with arrows came from
 # https://github.com/Felix11H/axis_arrowheads
 # Used with permission from Felix
