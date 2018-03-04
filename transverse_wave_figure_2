@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+
+import numpy as np
+import matplotlib.patches as pts
+import matplotlib.pyplot as plt
+
+# Use matplotlib to generate the graphic for the 
+# http://www.physics-geek.us discussion on transverse waves
+
+# set up the plotting space
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+# plot tension vector
+XP = 0.0
+YP = 0.0
+UP = 1.0
+VP = 1.0
+ax.arrow(XP, YP, UP, VP, fc="k", ec="k", head_width=0.05, head_length= 0.1 )
+
+# plot eta
+
+xeta1 = [1.0, 1.0]
+yeta1 = [1.0, 0.0]
+ax.plot(xeta1, yeta1, 'k--')
+
+# plot x
+
+x1 = [0.0, 1.0]
+y1 = [0.0, 0.0]
+ax.plot(x1, y1, 'k--')
+
+
+# The code for removing the axis and replacing with arrows came from
+# https://github.com/Felix11H/axis_arrowheads
+# Used with permission from Felix
+
+xmin, xmax = ax.get_xlim() 
+ymin, ymax = ax.get_ylim()
+
+ymin = ymin
+ymax = ymax
+
+# removing the default axis on all sides:
+for side in ['bottom','right','top','left']:
+    ax.spines[side].set_visible(False)
+ 
+# removing the axis ticks
+plt.xticks([]) # labels 
+plt.yticks([])
+ax.xaxis.set_ticks_position('none') # tick markers
+ax.yaxis.set_ticks_position('none')
+ 
+# wider figure for demonstration
+fig.set_size_inches(6,4)
+ 
+plt.show()
