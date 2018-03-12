@@ -3,6 +3,7 @@
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 
 # Set up argument parsing
 
@@ -10,6 +11,12 @@ parser = argparse.ArgumentParser(description=
 'Generate 1 dimensional transverse waves')
 parser.add_argument('-o', '--output', help = 'Output file name and path.')
 args = parser.parse_args()
+
+# Set up matplotlib animations
+
+fig, ax = plt.subplots()
+xdata, ydata = [], []
+ln, =plt.plot(=[], [], 'ro', animated=True)
 
 # Set the total time and time step
 
@@ -38,6 +45,8 @@ for iteration in range(0, width+1):
 	
 	np.put(eta, indexR, y)
 	np.put(eta, indexL, y)
+
+
 
 plt.plot(eta)
 plt.axis('equal')

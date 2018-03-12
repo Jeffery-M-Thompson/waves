@@ -18,7 +18,10 @@ Programs in python, c, c++ exploring waves, wavelets and solitons
 #        Plots reference wave diagram for discussion of mathematics           #
 #        of a tranverse wave on a string.                                     #
 #                                                                             #
-#                                                                             #
+#    transverse_wave_figure_2                                                 #
+#        Plots reference triangle for discussion of mathematics of a          #
+#        tranverse wave on a string.                                          #
+#                                                                             #                                                                             #
 #                                                                             #
 #                                                                             #
 ###############################################################################
