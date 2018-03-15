@@ -15,13 +15,23 @@ Programs in python, c, c++ exploring waves, wavelets and solitons
 #        Arguments                                                            #
 #                                                                             #
 #    transverse_wave_figure                                                   #
-#        Plots reference wave diagram for discussion of mathematics           #
+#        Plots reference wave diagrams for discussion of mathematics          #
 #        of a tranverse wave on a string.                                     #
 #                                                                             #
-#    transverse_wave_figure_2                                                 #
-#        Plots reference triangle for discussion of mathematics of a          #
-#        tranverse wave on a string.                                          #
-#                                                                             #                                                                             #
+#            -f --figure accepts an integer value                             #
+#                the integer value relates to a figure                        #
+#                                                                             #
+#                    figure     description                                   #
+#                    ------------------------------------------------------   #
+#                        1      Plots a reference wave for deriving the       #
+#                               partial differential equations defining the   #
+#                               wave equation on a taut string.               #
+#                                                                             #
+#                        2      Plots a reference triangle for relating       #
+#                               changes in eta and x to the angles alpha.     #
+#                                                                             #
+#                        3      Plots a reference wave for deriving the       #
+#                               speed of a wave on a taut string.             #
 #                                                                             #
 #                                                                             #
 ###############################################################################
