@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import getopt
 import numpy as np
 import matplotlib.patches as pts
 import matplotlib.pyplot as plt
@@ -146,10 +147,12 @@ def figure_1():
 # set up the plotting space
 
 def figure_2():
+	
 	fig = plt.figure()
 	ax = fig.add_subplot(111)
 
 	# plot tension vector
+	
 	XP = 0.0
 	YP = 0.0
 	UP = 1.0
@@ -170,11 +173,13 @@ def figure_2():
 	ax.plot(x1, y1, 'k--')
 
 	# plot the angle arch
+	
 	alpha1 = pts.Arc([0.0, 0.0], 0.25, 0.25,
 	angle=0, theta1=0, theta2=45)
 	ax.add_patch(alpha1)
 
 	# plot the labels
+	
 	plt.text(0.12, 0.05, r'$\alpha_i$', fontsize=16)
 	plt.text(1.025, 0.45, r'$\partial \eta$', fontsize=16)
 	plt.text(0.5, -0.1, r'$\partial x$', fontsize=16)
@@ -347,8 +352,23 @@ def figure_3():
 	length_includes_head= True, clip_on = False) 
 	plt.show()
 
+def usage():
+	print("-h --help prints this message\n-f --f n prints figure n")
+	
 def read_arguments(argv):
-	return 1
+	figure = 0
+	try:
+		opts, args = getopt.getopt(argv, "hf", ["help", "figure="])
+	except getopt.GetoptError:
+		usage()
+		sys.exit(2)
+	for opt, arg in opts:
+		if opt in ("-h", "--help"):
+			usage()
+			sys.exit()
+		elif opt in ("-f", "--figure"):
+			figure = int(arg)
+	return figure
 		
 def call_figure(figure_number):
 	if figure_number == 1:
